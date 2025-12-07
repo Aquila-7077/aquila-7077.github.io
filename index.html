@@ -4,70 +4,373 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tristan Coquet • Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
+    <!-- Header Toggle Button (Mobile) -->
+    <button class="header-toggle" id="headerToggle">
+        <i class="bi bi-list"></i>
+    </button>
 
-    <!-- HEADER / NAV -->
-    <header>
-        <div class="logo">Aquila</div>
+    <!-- Header Sidebar -->
+    <header class="header" id="header">
+        <div class="logo-section">
+            <div class="logo">Aquila</div>
+            <div class="logo-subtitle">Portfolio</div>
+        </div>
+
         <nav>
-            <a href="#hero">Accueil</a>
-            <a href="#skills">Compétences</a>
-            <a href="#projects">Projets</a>
-            <a href="#contact">Contact</a>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link active">
+                    <i class="bi bi-house"></i> 
+                    <span>Accueil</span>
+                </a></li>
+                <li><a href="#about" class="nav-link">
+                    <i class="bi bi-person"></i> 
+                    <span>À propos</span>
+                </a></li>
+                <li><a href="#skills" class="nav-link">
+                    <i class="bi bi-code-slash"></i> 
+                    <span>Compétences</span>
+                </a></li>
+                <li><a href="#resume" class="nav-link">
+                    <i class="bi bi-file-earmark-text"></i> 
+                    <span>Parcours</span>
+                </a></li>
+                <li><a href="#projects" class="nav-link">
+                    <i class="bi bi-grid"></i> 
+                    <span>Projets</span>
+                </a></li>
+                <li><a href="#contact" class="nav-link">
+                    <i class="bi bi-envelope"></i> 
+                    <span>Contact</span>
+                </a></li>
+            </ul>
         </nav>
     </header>
 
-    <!-- HERO SECTION -->
-    <section id="hero">
-        <h1>Tristan Coquet</h1>
-        <p>Développeur Python & Étudiant BUT MMI</p>
-        <p>Créateur d'un système de recommandation IA pour League of Legends</p>
-        <a href="#projects" class="btn">Voir mes projets</a>
-    </section>
+    <!-- Main Content -->
+    <main class="main-content">
+        
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Tristan Coquet</h1>
+                <p class="subtitle">Développeur Python & Étudiant BUT MMI</p>
+                <p class="description">Créateur d'un système de recommandation IA pour League of Legends</p>
+                <a href="#projects" class="btn">Découvrir mes projets</a>
+                
+                <div class="social-links">
+                    <a href="https://github.com/Aquila-7077" target="_blank" aria-label="GitHub">
+                        <i class="bi bi-github"></i>
+                    </a>
+                    <a href="mailto:tristan.coquet.ciel@gmail.com" aria-label="Email">
+                        <i class="bi bi-envelope"></i>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
 
-    <!-- SKILLS -->
-    <section id="skills">
-        <h2>Compétences</h2>
-        <div class="skills-container">
-            <div class="skill">Python</div>
-            <div class="skill">HTML / CSS</div>
-            <div class="skill">IA & Machine Learning</div>
-            <div class="skill">Web Design</div>
-            <div class="skill">Git / GitHub</div>
-        </div>
-    </section>
+        <!-- About Section -->
+        <section id="about">
+            <div class="section-wrapper">
+                <div class="section-title">
+                    <h2>À propos de moi</h2>
+                    <p>Passionné par le développement et l'intelligence artificielle</p>
+                </div>
 
-    <!-- PROJECTS -->
-    <section id="projects">
-        <h2>Projets</h2>
+                <div class="about-container">
+                    <div class="about-img">
+                        <img src="https://via.placeholder.com/350x350/7B61FF/FFFFFF?text=TC" alt="Tristan Coquet">
+                    </div>
+                    
+                    <div class="about-content">
+                        <h3>Développeur Python & Étudiant BUT MMI</h3>
+                        <p>
+                            Actuellement étudiant en BUT Métiers du Multimédia et de l'Internet, je me spécialise dans le développement Python et l'intelligence artificielle. Passionné par la création de solutions innovantes, j'ai développé un système de recommandation IA pour League of Legends, une alternative moderne aux outils existants.
+                        </p>
+                        <p>
+                            Mon parcours m'a permis d'acquérir des compétences solides en programmation, en analyse de données et en conception d'interfaces utilisateur. Je suis constamment à la recherche de nouveaux défis techniques et de projets ambitieux.
+                        </p>
 
-        <div class="project-card">
-            <h3>IA Recommandation LoL</h3>
-            <p>Projet Python : Alternative à U.GG & Porofessor. Analyse de parties & recommandations intelligentes.</p>
-        </div>
+                        <ul class="info-list">
+                            <li>
+                                <i class="bi bi-chevron-right"></i> 
+                                <strong>Formation:</strong> 
+                                <span>BUT MMI</span>
+                            </li>
+                            <li>
+                                <i class="bi bi-chevron-right"></i> 
+                                <strong>Ville:</strong> 
+                                <span>France</span>
+                            </li>
+                            <li>
+                                <i class="bi bi-chevron-right"></i> 
+                                <strong>Email:</strong> 
+                                <span>tristan.coquet.ciel@gmail.com</span>
+                            </li>
+                            <li>
+                                <i class="bi bi-chevron-right"></i> 
+                                <strong>GitHub:</strong> 
+                                <span>Aquila-7077</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <div class="project-card">
-            <h3>Prototype Mât Éolien</h3>
-            <p>Projet BTS CIEL : Maquette fonctionnelle pour la détection d’obstacles sur éoliennes.</p>
-        </div>
-    </section>
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="section-wrapper">
+                <div class="section-title">
+                    <h2>Compétences</h2>
+                    <p>Technologies et outils que je maîtrise</p>
+                </div>
 
-    <!-- CONTACT -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email : <a href="mailto:tristan.coquet.ciel@gmail.com">tristan.coquet.ciel@gmail.com</a></p>
-        <p>GitHub : <a href="https://github.com/Aquila-7077" target="_blank">Aquila-7077</a></p>
-    </section>
+                <div class="skills-container">
+                    <div class="skills-column">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Python</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90"></div>
+                            </div>
+                        </div>
 
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">HTML / CSS</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="85"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">IA & Machine Learning</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="80"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-column">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">JavaScript</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="75"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Git / GitHub</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="85"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Web Design</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="80"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section id="resume">
+            <div class="section-wrapper">
+                <div class="section-title">
+                    <h2>Parcours</h2>
+                    <p>Mon expérience et ma formation</p>
+                </div>
+
+                <div class="resume-container">
+                    <div class="resume-column">
+                        <h3 class="resume-title">Formation</h3>
+
+                        <div class="resume-item">
+                            <h4>BUT Métiers du Multimédia et de l'Internet</h4>
+                            <h5>2023 - Présent</h5>
+                            <p>Formation complète en développement web, design, et gestion de projets digitaux. Spécialisation en développement et intelligence artificielle.</p>
+                        </div>
+
+                        <div class="resume-item">
+                            <h4>BTS CIEL</h4>
+                            <h5>2021 - 2023</h5>
+                            <p>Cybersécurité, Informatique et réseaux, ÉLectronique. Formation technique en systèmes électroniques et informatiques industriels.</p>
+                        </div>
+                    </div>
+
+                    <div class="resume-column">
+                        <h3 class="resume-title">Projets Majeurs</h3>
+
+                        <div class="resume-item">
+                            <h4>Système de Recommandation IA - League of Legends</h4>
+                            <h5>2024</h5>
+                            <p><em>Projet Python & Machine Learning</em></p>
+                            <ul>
+                                <li>Alternative à U.GG & Porofessor</li>
+                                <li>Analyse de données de parties</li>
+                                <li>Recommandations intelligentes basées sur l'IA</li>
+                                <li>Interface utilisateur intuitive</li>
+                            </ul>
+                        </div>
+
+                        <div class="resume-item">
+                            <h4>Prototype Mât Éolien</h4>
+                            <h5>2023</h5>
+                            <p><em>Projet BTS CIEL</em></p>
+                            <ul>
+                                <li>Maquette fonctionnelle</li>
+                                <li>Système de détection d'obstacles</li>
+                                <li>Électronique embarquée</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="section-wrapper">
+                <div class="section-title">
+                    <h2>Projets</h2>
+                    <p>Mes réalisations et créations</p>
+                </div>
+
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>IA Recommandation LoL</h3>
+                        <p>Projet Python innovant : Alternative moderne à U.GG & Porofessor. Système d'analyse de parties et de recommandations intelligentes basé sur l'intelligence artificielle et le machine learning.</p>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Prototype Mât Éolien</h3>
+                        <p>Projet BTS CIEL : Conception et réalisation d'une maquette fonctionnelle pour la détection d'obstacles sur éoliennes. Intégration de capteurs et système électronique embarqué.</p>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Portfolio Web</h3>
+                        <p>Création de mon portfolio personnel avec design moderne et animations. Utilisation de HTML5, CSS3 et JavaScript pour une expérience utilisateur optimale.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="section-wrapper">
+                <div class="section-title">
+                    <h2>Contact</h2>
+                    <p>N'hésitez pas à me contacter</p>
+                </div>
+
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="bi bi-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Email</h3>
+                                <p><a href="mailto:tristan.coquet.ciel@gmail.com">tristan.coquet.ciel@gmail.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="bi bi-github"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>GitHub</h3>
+                                <p><a href="https://github.com/Aquila-7077" target="_blank">Aquila-7077</a></p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="bi bi-geo-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Localisation</h3>
+                                <p>France</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" id="contactForm" action="contact.php" method="POST">
+                        <div class="form-group">
+                            <label for="name">Nom</label>
+                            <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="votre.email@exemple.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Sujet</label>
+                            <input type="text" id="subject" name="subject" placeholder="Sujet du message" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Votre message..." required></textarea>
+                        </div>
+
+                        <div class="form-status" id="formStatus"></div>
+
+                        <button type="submit" class="btn">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
     <footer>
-        © 2025 - Portfolio by Tristan Coquet
+        <p>© 2025 - Portfolio by Tristan Coquet - Tous droits réservés</p>
     </footer>
 
+    <!-- JavaScript -->
     <script src="script.js"></script>
+    
 </body>
 </html>
