@@ -3,41 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Tristan Coquet</title>
+    <title>Tristan Coquet • Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header id="hero">
-        <h1>Tristan Coquet</h1>
-        <p>Étudiant BUT MMI - Développement & IA orientée Gaming</p>
-        <!-- Boutons à ajouter -->
+
+    <!-- HEADER / NAV -->
+    <header>
+        <div class="logo">Aquila</div>
+        <nav>
+            <a href="#hero">Accueil</a>
+            <a href="#skills">Compétences</a>
+            <a href="#projects">Projets</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
 
-    <section id="competences">
+    <!-- HERO SECTION -->
+    <section id="hero">
+        <h1>Tristan Coquet</h1>
+        <p>Développeur Python & Étudiant BUT MMI</p>
+        <p>Créateur d'un système de recommandation IA pour League of Legends</p>
+        <a href="#projects" class="btn">Voir mes projets</a>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
         <h2>Compétences</h2>
-        <ul>
-            <li>Python / IA</li>
-            <li>Développement Web</li>
-            <li>UX/UI Design</li>
-            <li>Git / GitHub</li>
-        </ul>
+        <div class="skills-container">
+            <div class="skill">Python</div>
+            <div class="skill">HTML / CSS</div>
+            <div class="skill">IA & Machine Learning</div>
+            <div class="skill">Web Design</div>
+            <div class="skill">Git / GitHub</div>
+        </div>
     </section>
 
-    <section id="projets">
+    <!-- PROJECTS -->
+    <section id="projects">
         <h2>Projets</h2>
-        <div class="project">
-            <h3>Assistant IA League of Legends</h3>
-            <p>Alternative à U.GG, I.terro et Porofessor. Recommandations de picks basées sur l'API Riot.</p>
+
+        <div class="project-card">
+            <h3>IA Recommandation LoL</h3>
+            <p>Projet Python : Alternative à U.GG & Porofessor. Analyse de parties & recommandations intelligentes.</p>
         </div>
-        <div class="project">
-            <h3>Maquette de mât de protection éolien</h3>
-            <p>Projet BTS CIEL - prototype fonctionnel</p>
+
+        <div class="project-card">
+            <h3>Prototype Mât Éolien</h3>
+            <p>Projet BTS CIEL : Maquette fonctionnelle pour la détection d’obstacles sur éoliennes.</p>
         </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact">
         <h2>Contact</h2>
         <p>Email : <a href="mailto:tristan.coquet.ciel@gmail.com">tristan.coquet.ciel@gmail.com</a></p>
+        <p>GitHub : <a href="https://github.com/Aquila-7077" target="_blank">Aquila-7077</a></p>
     </section>
+
+    <footer>
+        © 2025 - Portfolio by Tristan Coquet
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
