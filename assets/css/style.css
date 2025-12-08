@@ -31,7 +31,7 @@ body {
 }
 
 /* ========================================
-   HEADER SIDEBAR - CORRIGÉ
+   HEADER SIDEBAR
 ======================================== */
 
 .header {
@@ -44,11 +44,11 @@ body {
     backdrop-filter: blur(10px);
     border-right: 1px solid var(--border-color);
     padding: 40px 30px;
-    z-index: 100;
+    z-index: 1000;
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
-    overflow-y: auto; /* AJOUTÉ: Évite le débordement du menu */
+    overflow-y: auto;
 }
 
 .logo-section {
@@ -118,7 +118,7 @@ body {
     color: white;
     font-size: 24px;
     cursor: pointer;
-    z-index: 101;
+    z-index: 1001;
     box-shadow: 0 5px 20px rgba(123, 97, 255, 0.4);
     transition: all 0.3s ease;
 }
@@ -144,14 +144,13 @@ section {
     align-items: center;
     justify-content: center;
     position: relative;
-    isolation: isolate; /* AJOUTÉ: Crée un nouveau contexte d'empilement */
 }
 
 .section-wrapper {
     width: 100%;
     max-width: 1200px;
-    position: relative; /* AJOUTÉ */
-    z-index: 1; /* AJOUTÉ: Contenu au-dessus des animations */
+    position: relative;
+    z-index: 2;
 }
 
 /* ========================================
@@ -199,7 +198,7 @@ section {
     background: linear-gradient(135deg, #111732 0%, #0B0F1E 100%);
     position: relative;
     overflow: hidden;
-    z-index: 1; /* AJOUTÉ: Force le hero à être sous les autres sections */
+    z-index: 1;
 }
 
 #hero::before {
@@ -212,7 +211,7 @@ section {
     top: -200px;
     right: -200px;
     animation: float 20s infinite ease-in-out;
-    z-index: 0; /* AJOUTÉ: Animation en arrière-plan */
+    z-index: 0;
 }
 
 @keyframes float {
@@ -229,7 +228,7 @@ section {
 
 .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     text-align: center;
     max-width: 800px;
 }
@@ -243,21 +242,21 @@ section {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: fadeInUp 0.8s ease;
+    animation: fadeInUp 0.8s ease forwards;
 }
 
 .hero-content .subtitle {
     font-size: 24px;
     color: var(--text-muted);
     margin-bottom: 15px;
-    animation: fadeInUp 1s ease;
+    animation: fadeInUp 1s ease forwards;
 }
 
 .hero-content .description {
     font-size: 18px;
     color: var(--text-light);
     margin-bottom: 30px;
-    animation: fadeInUp 1.2s ease;
+    animation: fadeInUp 1.2s ease forwards;
 }
 
 @keyframes fadeInUp {
@@ -326,8 +325,8 @@ section {
 
 #about {
     background: var(--darker-bg);
-    position: relative; /* AJOUTÉ */
-    z-index: 2; /* AJOUTÉ: Au-dessus du hero */
+    position: relative;
+    z-index: 10;
 }
 
 .about-container {
@@ -338,8 +337,8 @@ section {
 }
 
 .about-img {
-    display: flex; /* AJOUTÉ: Centre l'image */
-    justify-content: center; /* AJOUTÉ */
+    display: flex;
+    justify-content: center;
 }
 
 .about-img img {
@@ -398,13 +397,13 @@ section {
 }
 
 /* ========================================
-   SKILLS SECTION - CORRIGÉ (Pas de barres de progression)
+   SKILLS SECTION
 ======================================== */
 
 #skills {
     background: var(--dark-bg);
-    position: relative; /* AJOUTÉ */
-    z-index: 2; /* AJOUTÉ */
+    position: relative;
+    z-index: 10;
 }
 
 .skills-container {
@@ -416,40 +415,37 @@ section {
 }
 
 .skills-column {
-    display: flex; /* AJOUTÉ */
-    flex-direction: column; /* AJOUTÉ */
-    gap: 25px; /* AJOUTÉ */
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
 
 .skill-item {
-    background: var(--card-bg); /* AJOUTÉ */
-    padding: 20px 25px; /* AJOUTÉ */
-    border-radius: 15px; /* AJOUTÉ */
-    border: 2px solid var(--border-color); /* AJOUTÉ */
-    transition: all 0.3s ease; /* AJOUTÉ */
+    background: var(--card-bg);
+    padding: 20px 25px;
+    border-radius: 15px;
+    border: 2px solid var(--border-color);
+    transition: all 0.3s ease;
 }
 
 .skill-item:hover {
-    transform: translateY(-5px); /* AJOUTÉ */
-    border-color: var(--primary); /* AJOUTÉ */
-    box-shadow: 0 10px 30px rgba(123, 97, 255, 0.2); /* AJOUTÉ */
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 30px rgba(123, 97, 255, 0.2);
 }
 
 .skill-header {
     display: flex;
-    align-items: center; /* MODIFIÉ */
-    justify-content: center; /* AJOUTÉ */
+    align-items: center;
+    justify-content: center;
 }
 
 .skill-name {
     font-weight: 600;
     color: var(--text-light);
-    font-size: 18px; /* MODIFIÉ */
-    text-align: center; /* AJOUTÉ */
+    font-size: 18px;
+    text-align: center;
 }
-
-/* SUPPRIMÉ: .skill-percentage, .skill-bar, .skill-progress */
-/* Ces styles ne sont plus nécessaires car les barres ont été supprimées du HTML */
 
 /* ========================================
    RESUME SECTION
@@ -457,8 +453,8 @@ section {
 
 #resume {
     background: var(--darker-bg);
-    position: relative; /* AJOUTÉ */
-    z-index: 2; /* AJOUTÉ */
+    position: relative;
+    z-index: 10;
 }
 
 .resume-container {
@@ -538,13 +534,13 @@ section {
 
 #projects {
     background: var(--dark-bg);
-    position: relative; /* AJOUTÉ */
-    z-index: 2; /* AJOUTÉ */
+    position: relative;
+    z-index: 10;
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* MODIFIÉ: 350px -> 320px */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
 }
 
@@ -599,8 +595,8 @@ section {
 
 #contact {
     background: var(--darker-bg);
-    position: relative; /* AJOUTÉ */
-    z-index: 2; /* AJOUTÉ */
+    position: relative;
+    z-index: 10;
 }
 
 .contact-container {
@@ -749,7 +745,38 @@ footer p {
 }
 
 /* ========================================
-   RESPONSIVE - CORRIGÉ
+   SCROLL TO TOP BUTTON
+======================================== */
+
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 5px 20px rgba(123, 97, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-top-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-5px);
+}
+
+/* ========================================
+   RESPONSIVE
 ======================================== */
 
 @media (max-width: 1024px) {
@@ -759,7 +786,7 @@ footer p {
 
     .header.active {
         left: 0;
-        box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); /* AJOUTÉ: Ombre sur mobile */
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
     }
 
     .header-toggle {
@@ -784,7 +811,7 @@ footer p {
     .resume-container,
     .contact-container {
         grid-template-columns: 1fr;
-        gap: 40px; /* AJOUTÉ: Espacement cohérent */
+        gap: 40px;
     }
 
     .skills-container {
@@ -823,7 +850,7 @@ footer p {
 
     section {
         padding: 60px 5%;
-        min-height: auto; /* MODIFIÉ: Évite les sections trop hautes sur mobile */
+        min-height: auto;
     }
 }
 
@@ -850,6 +877,6 @@ footer p {
     }
     
     .social-links {
-        flex-wrap: wrap; /* AJOUTÉ: Évite le débordement des icônes */
+        flex-wrap: wrap;
     }
 }
