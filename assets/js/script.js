@@ -105,23 +105,25 @@ if (contactForm) {
             submitBtn.disabled = true;
             
             try {
-                const response = await fetch('contact.php', {
+                const response = await fetch('assets/form/contact.php', {
                     method: 'POST',
                     body: formData
                 });
                 
-                if (response.ok) {
+                const data = await response.json();
+                
+                if (data.success) {
                     if (formStatus) {
-                        formStatus.textContent = 'Message envoyé avec succès ! Je vous répondrai bientôt.';
+                        formStatus.textContent = data.message;
                         formStatus.className = 'form-status success';
                     }
                     contactForm.reset();
                 } else {
-                    throw new Error('Erreur lors de l\'envoi');
+                    throw new Error(data.message);
                 }
             } catch (error) {
                 if (formStatus) {
-                    formStatus.textContent = 'Erreur lors de l\'envoi. Veuillez réessayer ou m\'envoyer un email directement.';
+                    formStatus.textContent = error.message || 'Erreur lors de l\'envoi. Veuillez réessayer.';
                     formStatus.className = 'form-status error';
                 }
             } finally {
