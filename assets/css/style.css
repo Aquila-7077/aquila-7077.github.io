@@ -616,6 +616,7 @@ section {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 50px;
+    align-items: flex-start;
 }
 
 .contact-info {
@@ -821,10 +822,15 @@ footer p {
     }
 
     .about-container,
-    .resume-container,
-    .contact-container {
+    .resume-container {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+
+    /* Contact reste en 2 colonnes jusqu'à 768px */
+    .contact-container {
+        grid-template-columns: 1fr 1.5fr;
+        gap: 30px;
     }
 
     .skills-container {
@@ -845,6 +851,12 @@ footer p {
 }
 
 @media (max-width: 768px) {
+    /* Contact passe en colonne seulement ici */
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
     .hero-content h1 {
         font-size: 36px;
     }
