@@ -143,7 +143,8 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative; /* AJOUTÉ: Pour le z-index */
+    position: relative;
+    isolation: isolate; /* AJOUTÉ: Crée un nouveau contexte d'empilement */
 }
 
 .section-wrapper {
@@ -198,6 +199,7 @@ section {
     background: linear-gradient(135deg, #111732 0%, #0B0F1E 100%);
     position: relative;
     overflow: hidden;
+    z-index: 1; /* AJOUTÉ: Force le hero à être sous les autres sections */
 }
 
 #hero::before {
@@ -324,6 +326,8 @@ section {
 
 #about {
     background: var(--darker-bg);
+    position: relative; /* AJOUTÉ */
+    z-index: 2; /* AJOUTÉ: Au-dessus du hero */
 }
 
 .about-container {
@@ -399,6 +403,8 @@ section {
 
 #skills {
     background: var(--dark-bg);
+    position: relative; /* AJOUTÉ */
+    z-index: 2; /* AJOUTÉ */
 }
 
 .skills-container {
@@ -451,6 +457,8 @@ section {
 
 #resume {
     background: var(--darker-bg);
+    position: relative; /* AJOUTÉ */
+    z-index: 2; /* AJOUTÉ */
 }
 
 .resume-container {
@@ -530,6 +538,8 @@ section {
 
 #projects {
     background: var(--dark-bg);
+    position: relative; /* AJOUTÉ */
+    z-index: 2; /* AJOUTÉ */
 }
 
 .projects-grid {
@@ -589,6 +599,8 @@ section {
 
 #contact {
     background: var(--darker-bg);
+    position: relative; /* AJOUTÉ */
+    z-index: 2; /* AJOUTÉ */
 }
 
 .contact-container {
