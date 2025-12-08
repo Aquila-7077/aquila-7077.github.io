@@ -58,9 +58,11 @@ window.addEventListener('scroll', () => {
 });
 
 // ========================================
-// SKILLS ANIMATION (Progress Bars)
+// SKILLS ANIMATION (Progress Bars) - DÉSACTIVÉ
 // ========================================
 
+// Cette section est commentée car les barres de progression ont été supprimées du HTML
+/*
 const skillsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -69,13 +71,11 @@ const skillsObserver = new IntersectionObserver((entries) => {
             progressBars.forEach(bar => {
                 const progress = bar.getAttribute('data-progress');
                 
-                // Animate the progress bar
                 setTimeout(() => {
                     bar.style.width = progress + '%';
                 }, 100);
             });
             
-            // Unobserve after animation
             skillsObserver.unobserve(entry.target);
         }
     });
@@ -83,11 +83,11 @@ const skillsObserver = new IntersectionObserver((entries) => {
     threshold: 0.5
 });
 
-// Observe the skills section
 const skillsSection = document.querySelector('#skills');
 if (skillsSection) {
     skillsObserver.observe(skillsSection);
 }
+*/
 
 // ========================================
 // SMOOTH SCROLL FOR NAVIGATION LINKS
@@ -265,9 +265,11 @@ scrollTopBtn.addEventListener('click', () => {
 });
 
 // ========================================
-// PARALLAX EFFECT ON HERO SECTION
+// PARALLAX EFFECT ON HERO SECTION - DÉSACTIVÉ
 // ========================================
 
+// COMMENTÉ : Cet effet causait le chevauchement avec la section "À propos"
+/*
 const hero = document.getElementById('hero');
 if (hero) {
     window.addEventListener('scroll', () => {
@@ -279,6 +281,7 @@ if (hero) {
         }
     });
 }
+*/
 
 // ========================================
 // PROJECT CARDS STAGGER ANIMATION
@@ -293,9 +296,9 @@ projectCards.forEach((card, index) => {
 // CONSOLE MESSAGE
 // ========================================
 
-console.log('%c👋 Bienvenue sur mon portfolio !', 'color: #7B61FF; font-size: 20px; font-weight: bold;');
+console.log('%cBienvenue sur mon portfolio !', 'color: #7B61FF; font-size: 20px; font-weight: bold;');
 console.log('%cDéveloppé par Tristan Coquet', 'color: #8B92B0; font-size: 14px;');
-console.log('%c🚀 Aquila Portfolio v1.0', 'color: #7B61FF; font-size: 12px;');
+console.log('%cAquila Portfolio v1.1', 'color: #7B61FF; font-size: 12px;');
 
 // ========================================
 // PERFORMANCE: Lazy Loading Images
