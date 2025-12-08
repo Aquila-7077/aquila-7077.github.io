@@ -31,7 +31,7 @@ body {
 }
 
 /* ========================================
-   HEADER SIDEBAR
+   HEADER SIDEBAR - CORRIGÉ
 ======================================== */
 
 .header {
@@ -48,6 +48,7 @@ body {
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
+    overflow-y: auto; /* AJOUTÉ: Évite le débordement du menu */
 }
 
 .logo-section {
@@ -142,11 +143,14 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative; /* AJOUTÉ: Pour le z-index */
 }
 
 .section-wrapper {
     width: 100%;
     max-width: 1200px;
+    position: relative; /* AJOUTÉ */
+    z-index: 1; /* AJOUTÉ: Contenu au-dessus des animations */
 }
 
 /* ========================================
@@ -206,6 +210,7 @@ section {
     top: -200px;
     right: -200px;
     animation: float 20s infinite ease-in-out;
+    z-index: 0; /* AJOUTÉ: Animation en arrière-plan */
 }
 
 @keyframes float {
@@ -328,6 +333,11 @@ section {
     align-items: center;
 }
 
+.about-img {
+    display: flex; /* AJOUTÉ: Centre l'image */
+    justify-content: center; /* AJOUTÉ */
+}
+
 .about-img img {
     width: 100%;
     max-width: 350px;
@@ -384,7 +394,7 @@ section {
 }
 
 /* ========================================
-   SKILLS SECTION
+   SKILLS SECTION - CORRIGÉ (Pas de barres de progression)
 ======================================== */
 
 #skills {
@@ -399,70 +409,41 @@ section {
     margin: 0 auto;
 }
 
+.skills-column {
+    display: flex; /* AJOUTÉ */
+    flex-direction: column; /* AJOUTÉ */
+    gap: 25px; /* AJOUTÉ */
+}
+
 .skill-item {
-    margin-bottom: 25px;
+    background: var(--card-bg); /* AJOUTÉ */
+    padding: 20px 25px; /* AJOUTÉ */
+    border-radius: 15px; /* AJOUTÉ */
+    border: 2px solid var(--border-color); /* AJOUTÉ */
+    transition: all 0.3s ease; /* AJOUTÉ */
+}
+
+.skill-item:hover {
+    transform: translateY(-5px); /* AJOUTÉ */
+    border-color: var(--primary); /* AJOUTÉ */
+    box-shadow: 0 10px 30px rgba(123, 97, 255, 0.2); /* AJOUTÉ */
 }
 
 .skill-header {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
+    align-items: center; /* MODIFIÉ */
+    justify-content: center; /* AJOUTÉ */
 }
 
 .skill-name {
     font-weight: 600;
     color: var(--text-light);
-    font-size: 16px;
+    font-size: 18px; /* MODIFIÉ */
+    text-align: center; /* AJOUTÉ */
 }
 
-.skill-percentage {
-    color: var(--primary);
-    font-weight: 600;
-    font-size: 14px;
-}
-
-.skill-bar {
-    width: 100%;
-    height: 10px;
-    background: var(--card-bg);
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-}
-
-.skill-progress {
-    height: 100%;
-    background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
-    border-radius: 10px;
-    transition: width 1.5s ease;
-    width: 0;
-    position: relative;
-}
-
-.skill-progress::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.3),
-        transparent
-    );
-    animation: shimmer 2s infinite;
-}
-
-@keyframes shimmer {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(100%);
-    }
-}
+/* SUPPRIMÉ: .skill-percentage, .skill-bar, .skill-progress */
+/* Ces styles ne sont plus nécessaires car les barres ont été supprimées du HTML */
 
 /* ========================================
    RESUME SECTION
@@ -553,7 +534,7 @@ section {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* MODIFIÉ: 350px -> 320px */
     gap: 30px;
 }
 
@@ -756,7 +737,7 @@ footer p {
 }
 
 /* ========================================
-   RESPONSIVE
+   RESPONSIVE - CORRIGÉ
 ======================================== */
 
 @media (max-width: 1024px) {
@@ -766,6 +747,7 @@ footer p {
 
     .header.active {
         left: 0;
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); /* AJOUTÉ: Ombre sur mobile */
     }
 
     .header-toggle {
@@ -790,6 +772,7 @@ footer p {
     .resume-container,
     .contact-container {
         grid-template-columns: 1fr;
+        gap: 40px; /* AJOUTÉ: Espacement cohérent */
     }
 
     .skills-container {
@@ -828,6 +811,7 @@ footer p {
 
     section {
         padding: 60px 5%;
+        min-height: auto; /* MODIFIÉ: Évite les sections trop hautes sur mobile */
     }
 }
 
@@ -847,5 +831,13 @@ footer p {
     .btn {
         padding: 12px 28px;
         font-size: 14px;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .social-links {
+        flex-wrap: wrap; /* AJOUTÉ: Évite le débordement des icônes */
     }
 }
