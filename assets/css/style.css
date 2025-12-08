@@ -544,6 +544,13 @@ section {
     gap: 30px;
 }
 
+/* Lien de carte de projet */
+.project-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 .project-card {
     background: var(--card-bg);
     border-radius: 20px;
@@ -571,6 +578,7 @@ section {
     transform: translateY(-10px);
     box-shadow: 0 20px 60px rgba(123, 97, 255, 0.3);
     background: var(--card-hover);
+    cursor: pointer;
 }
 
 .project-card:hover::before {
@@ -582,6 +590,11 @@ section {
     font-size: 22px;
     color: var(--primary);
     margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.project-card:hover h3 {
+    color: var(--primary-light);
 }
 
 .project-card p {
